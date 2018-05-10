@@ -7,8 +7,8 @@ var selectedNumber;
 const MESSAGE_SUCCESS = 'Congratulations! You got it right!';
 const MESSAGE_GAME_OVER = '!!!GAME OVER!!!';
 const MESSAGE_WRONG = 'Wrong!';
-const MESSAGE_LOW = 'Last guess was too low!';
-const MESSAGE_HIGH = 'Last guess was too high!';
+const MESSAGE_GUESS_TOO_LOW = 'Last guess was too low!';
+const MESSAGE_GUESS_TOO_HIGH = 'Last guess was too high!';
 
 var newgame = document.querySelector('.newgame');
 var input = document.querySelector('input');
@@ -36,17 +36,16 @@ function startNewGame() {
 
 function makeGuess(guessedNumber) {
     // make a guess
+    addGuess(guessedNumber);
     if (guessedNumber === selectedNumber) {
         // guess was right: finish game
-        addGuess(guessedNumber);
+        disableInput()
         displayMessage(MESSAGE_SUCCESS, 'green');
         hideLowHigh();
-        disableInput()
         showNewGame();
     } else {
         if (roundNumber < 10) {
             // guess was wrong: next round
-            addGuess(guessedNumber);
             displayMessage(MESSAGE_WRONG, 'red');
             if (guessedNumber < selectedNumber) {
                 displayLowHigh('low');
@@ -56,21 +55,38 @@ function makeGuess(guessedNumber) {
             roundNumber++;
         } else {
             // guess was right: finish game
-            addGuess(guessedNumber);
+            disableInput();
             displayMessage(MESSAGE_GAME_OVER, 'red');
             hideLowHigh();
-            disableInput();
             showNewGame();
         }
     }
     clearInput();
 }
 
+// game interface functions
+
+// Note: All elements start visible. They are added and removed
+// from the page flow via javascript.
+
+function addGuess(guess) {
+    // add guess to guesses list and display it
+    guesses.push(guess);
+    guessesShow.textContent = guesses.join(' ');
+    guessesShow.style.display = '';
+}
+
 function clearGuesses() {
     // clear guesses and hide the element that shows them
     guesses = [];
     guessesShow.style.display = 'none';
+}
 
+function displayMessage(text, color) {
+    // displays a message
+    message.textContent = text;
+    message.style.backgroundColor = color;
+    message.style.display = '';
 }
 
 function hideMessage() {
@@ -84,48 +100,34 @@ function enableInput() {
     submit.disabled = false;
 }
 
-function hideLowHigh() {
-    // hide low/high message
-    lowhigh.style.display = 'none'
-}
-
-function hideNewGame() {
-    // hide new game button
-    newgame.style.display = 'none'
-}
-
-function addGuess(guess) {
-    // add guess to guesses list and display it
-    guesses.push(guess);
-    guessesShow.textContent = guesses.join(' ');
-    guessesShow.style.display = 'block';
-}
-
-function displayMessage(text, color) {
-    // displays a message
-    message.textContent = text;
-    message.style.backgroundColor = color;
-    message.style.display = 'block';
-}
-
-function displayLowHigh(lowOrHigh) {
-    if (lowOrHigh == 'low') {
-        lowhigh.textContent = MESSAGE_LOW;
-    } else {
-        lowhigh.textContent = MESSAGE_HIGH;
-    }
-    lowhigh.style.display = 'block';
-}
-
 function disableInput() {
     // disable input and submit button
     input.disabled = true;
     submit.disabled = true;
 }
 
+function displayLowHigh(lowOrHigh) {
+    if (lowOrHigh == 'low') {
+        lowhigh.textContent = MESSAGE_GUESS_TOO_LOW;
+    } else {
+        lowhigh.textContent = MESSAGE_GUESS_TOO_HIGH;
+    }
+    lowhigh.style.display = '';
+}
+
+function hideLowHigh() {
+    // hide low/high message
+    lowhigh.style.display = 'none'
+}
+
 function showNewGame() {
     // show new game button
-    newgame.style.display = 'inline-block';
+    newgame.style.display = '';
+}
+
+function hideNewGame() {
+    // hide new game button
+    newgame.style.display = 'none'
 }
 
 function clearInput() {
