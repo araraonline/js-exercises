@@ -32,6 +32,7 @@ function startNewGame() {
     hideLowHigh();
     enableInput();
     hideNewGame();
+    setFocus();
 }
 
 function makeGuess(guessedNumber) {
@@ -53,6 +54,7 @@ function makeGuess(guessedNumber) {
                 displayLowHigh('high');
             }
             roundNumber++;
+            setFocus();
         } else {
             // guess was right: finish game
             disableInput();
@@ -128,6 +130,11 @@ function showNewGame() {
 function hideNewGame() {
     // hide new game button
     newgame.style.display = 'none'
+}
+
+function setFocus() {
+    // set focus to the text field
+    input.focus();
 }
 
 function clearInput() {
