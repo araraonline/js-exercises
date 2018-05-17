@@ -1,0 +1,21 @@
+body {
+    margin: 1em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.gallery {
+    width: 640px;
+    margin: auto;
+}
+
+.main-pic {
+    display: block;
+}
+
+.thumb-pic {
+    display: inline-block;
+    width: 20%;
+}
