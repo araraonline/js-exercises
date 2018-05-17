@@ -40,6 +40,11 @@ h1 {
 
 button {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 5px;
+    left: 5px;
+
+    border: 1px solid #999;
+    background-color: rgba(150, 150, 150, 0.6);
+    text-shadow: 1px 1px 1px white;
+    cursor: pointer;
 }
