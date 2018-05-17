@@ -17,5 +17,6 @@ h1 {
 
 .thumb-pic {
     display: inline-block;
+    vertical-align: top;  /* the initial value creates a gap between rows */
     width: 20%;
 }
