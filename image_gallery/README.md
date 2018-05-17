@@ -18,4 +18,8 @@ The content is horizontally centered and anchored on top.
 
 ## Part 1
 
-Part 1 is the gallery itself and its working. Let's do it.
+Part 1 is the gallery itself and its workings. Let's do it.
+
+## Part 2
+
+Part 2 involves creating a darkener filter over the zoomed image.
