@@ -1,5 +1,7 @@
 var gallery = document.querySelector('.gallery');
 var mainPic = document.querySelector('.main-pic');
+var filter = document.querySelector('.filter');
+var filterBtn = document.querySelector('button');
 
 function loadImage(num) {
     // add image thumbnail to gallery
@@ -15,6 +17,14 @@ function zoomIn(e) {
     var src = e.target.getAttribute('src');
     mainPic.setAttribute('src', src);
 }
+
+
+// LISTENERS
+
+filterBtn.onclick = function() {
+    var darkened = !filter.classList.toggle('hidden');
+    filterBtn.textContent = (darkened)? 'Lighten' : 'Darken';
+};
 
 
 // INITIALIZE
