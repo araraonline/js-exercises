@@ -48,3 +48,28 @@ main {
         font-size: 1.1em;
     }
 }
+
+/* make it pretty */
+
+body {
+    color: #222;
+}
+
+.red {
+    color: #ef0026;
+}
+
+.blue {
+    color: #073487;
+}
+
+button {
+    color: #222;
+    font-size: 0.9em;
+
+    padding: 5px 8px;
+
+    background-color: #c7ca00;
+    border: 1px solid #7777;
+    border-radius: 1em;
+}
