@@ -35,3 +35,16 @@ button {
     clear: both;
     display: table;
 }
+
+/* for bigger displays */
+
+main {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 1.1em;
+    }
+}
