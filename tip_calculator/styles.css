@@ -1,59 +1,37 @@
-/* main color: #55a0eb */
-/* complementary color: #eb8e55 */
-
 * {
     box-sizing: border-box;
-    /* border: 1px solid black; */
 }
 
 body {
-    margin: 0;
-    width: 500px;
-    font-family: 'Roboto', sans-serif;
+    margin: 1em;
 }
 
 h1 {
     text-align: center;
-    margin: 1rem 0;
-    font-family: 'Open Sans', serif;
 }
 
-.inputs {
-    padding: 1rem;
+input {
+    width: 150px;
+}
+
+.input {
+    line-height: 4em;
 }
 
 .button {
-    padding: 1rem;
+    padding-top: 1em;
 }
 
-/* floats */
-
-.left {
-    float: left;
+button {
+    width: 100%;
 }
 
-.right {
-    float: right;
-}
+/* float */
 
+.left { float: left; }
+.right { float: right; }
 .input::after {
     content: "";
     clear: both;
     display: table;
-}
-
-/* button in the center */
-
-.button {
-    text-align: center;
-}
-
-/* style */
-
-.input {
-    line-height: 3;
-}
-
-button {
-    font-size: 0.9em;
 }
