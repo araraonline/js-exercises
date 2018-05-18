@@ -32,3 +32,9 @@ h1 {
 .input, .button {
     clear: both;
 }
+
+/* button in the center */
+
+.button {
+    text-align: center;
+}
