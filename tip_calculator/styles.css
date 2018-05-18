@@ -3,7 +3,7 @@
 
 * {
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 body {
@@ -15,7 +15,7 @@ body {
 h1 {
     text-align: center;
     margin: 1rem 0;
-    font-family: 'Lora', serif;
+    font-family: 'Open Sans', serif;
 }
 
 .inputs {
