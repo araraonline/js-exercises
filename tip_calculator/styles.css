@@ -11,14 +11,24 @@ h1 {
     margin: 1rem auto;
 }
 
-main {
-    background: #eee;
-}
-
 .inputs {
     padding: 1rem;
 }
 
 .button {
     padding: 1rem;
+}
+
+/* floats */
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.input, .button {
+    clear: both;
 }
