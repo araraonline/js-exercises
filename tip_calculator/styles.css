@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    width: 150px;
+}
+
+.input {
+    line-height: 4rem;
+}
+
+.button {
+    padding-top: 1rem;
+}
+
+button {
+    width: 100%;
+}
+
+/* float */
+
+.left { float: left; }
+.right { float: right; }
+.input::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* for bigger displays */
+
+main {
+    display: block;  /* needed for IE11 */
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 1.1rem;
+    }
+}
+
+/* make it pretty */
+
+body {
+    color: #222;
+}
+
+.red {
+    color: #c50500;
+}
+
+.blue {
+    color: #3b14af;
+}
+
+button {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    padding: 5px 8px;
+    line-height: 20px;
+
+    background-color: #2c0e87;
+    border: 2px solid #745ac3;
+    border-radius: 1rem;
+
+    cursor: pointer;
+}
+
+/* fonts */
+
+h1, main {
+    font-family: lato, sans-serif;
+}
+
+input, button {
+    font-family: cantarell, sans-serif;
+}
+
+input {
+    /* this will prevent mobile browsers from zooming in when entering input */
+    font-size: 1rem;
+}

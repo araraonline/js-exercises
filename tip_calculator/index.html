@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tip calculator</title>
+        <link href="styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cantarell:400,700|Lato:400,700" rel="stylesheet">
+    </head>
+    <body>
+        <h1>
+            <span class="red">Tip</span>
+            <span class="blue">calculator</span>
+        </h1>
+        <main>
+            <div class="input">
+                <div class="left">Bill amount:</div>
+                <div class="right"><input class="billInp"></div>
+            </div>
+            <div class="input">
+                <div class="left">Tip percentage:</div>
+                <div class="right"><input class="tippctInp"></div>
+            </div>
+            <div class="input">
+                <div class="left">Tip amount:</div>
+                <div class="right"><input class="tipInp" disabled></div>
+            </div>
+            <div class="input">
+                <div class="left">Total:</div>
+                <div class="right"><input class="totalInp" disabled></div>
+            </div>
+            <div class="button">
+                <button class="calculateBtn">Calculate</button>
+            </div>
+        </main>
+        <script src="main.js"></script>
+    </body>
+</html>
