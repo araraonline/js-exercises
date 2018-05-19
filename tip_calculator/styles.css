@@ -39,6 +39,7 @@ button {
 /* for bigger displays */
 
 main {
+    display: block;  /* needed for IE11 */
     margin: 0 auto;
     max-width: 400px;
 }
