@@ -74,6 +74,8 @@ button {
     background-color: #2c0e87;
     border: 2px solid #745ac3;
     border-radius: 1em;
+
+    cursor: pointer;
 }
 
 /* fonts */
