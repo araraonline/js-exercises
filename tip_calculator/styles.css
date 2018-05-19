@@ -87,3 +87,8 @@ h1, main {
 input, button {
     font-family: cantarell, sans-serif;
 }
+
+input {
+    /* this will prevent mobile browsers from zooming in when entering input */
+    font-size: 1rem;
+}
