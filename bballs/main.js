@@ -112,16 +112,16 @@ EvilCircle.prototype.setControls = function() {
     var _this = this; /// set _this to the EvilCircle object
     window.onkeydown = function(e) {
         if (e.keyCode === 65) { 
-            // left
+            // A - left
             _this.x -= _this.velX;
         } else if (e.keyCode === 68) {
-            // right
+            // D - right
             _this.x += _this.velX;
         } else if (e.keyCode === 87) {
-            // up
+            // W - up
             _this.y -= _this.velY;
         } else if (e.keyCode === 83) {
-            // down
+            // S - down
             _this.y += _this.velY;
         }
     }
