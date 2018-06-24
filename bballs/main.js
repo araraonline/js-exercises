@@ -1,3 +1,12 @@
+// ball counter
+
+var para = document.querySelector('p');
+var ballsCount = 0;
+
+function updateCount() {
+    para.textContent = 'Ball count: ' + ballsCount;
+}
+
 // setup canvas
 
 var canvas = document.querySelector('canvas');
@@ -126,6 +135,8 @@ EvilCircle.prototype.collisionDetect = function() {
             var distance = Math.sqrt(dx * dx + dy * dy);
             if (distance < this.size + balls[j].size) {
                 balls[j].exists = false;
+                ballsCount--;
+                updateCount();
             }
         }
     }
@@ -159,6 +170,8 @@ function loop() {
             size
         );
         balls.push(ball);
+        ballsCount++;
+        updateCount();
     }
 
     for (var i = 0; i < balls.length; i++) {
