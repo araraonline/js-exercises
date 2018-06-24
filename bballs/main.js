@@ -1,3 +1,20 @@
+// utils
+
+function random(min,max) {
+  var num = Math.floor(Math.random()*(max-min+1)) + min;
+  return num;
+}
+
+function randomColor() {
+    var r,g,b;
+
+    r = random(0,255);
+    g = random(0,255);
+    b = random(0,255);
+
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+}
+
 // ball counter
 
 var para = document.querySelector('p');
@@ -17,10 +34,6 @@ var height = canvas.height = window.innerHeight;
 
 // function to generate random number
 
-function random(min,max) {
-  var num = Math.floor(Math.random()*(max-min+1)) + min;
-  return num;
-}
 
 // bouncing balls ---
 
@@ -55,7 +68,7 @@ Ball.prototype.collisionDetect = function() {
             var dy = this.y - balls[j].y;
             var distance = Math.sqrt(dx * dx + dy * dy);
             if (distance < this.size + balls[j].size) {
-                balls[j].color = this.color = 'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) +')';
+                balls[j].color = this.color = randomColor();
             }
         }
     }
@@ -166,7 +179,7 @@ function loop() {
             random(-12, 12),
             random(-12, 12),
             true,
-            'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) + ')',
+            randomColor(),
             size
         );
         balls.push(ball);
