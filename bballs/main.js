@@ -30,8 +30,6 @@ var ctx = canvas.getContext('2d');
 var width = canvas.width = window.innerWidth;
 var height = canvas.height = window.innerHeight;
 
-// function to generate random number
-
 
 // bouncing balls ---
 
