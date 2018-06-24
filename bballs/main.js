@@ -1,4 +1,4 @@
-// utils
+// randomizer utils
 
 function random(min,max) {
   var num = Math.floor(Math.random()*(max-min+1)) + min;
@@ -15,23 +15,10 @@ function randomColor() {
     return 'rgb(' + r + ',' + g + ',' + b + ')';
 }
 
-// ball counter
 
-var para = document.querySelector('p');
-function updateCount() {
-    para.textContent = 'Ball count: ' + balls.length;
-}
+// objects ---
 
-// setup canvas
-
-var canvas = document.querySelector('canvas');
-var ctx = canvas.getContext('2d');
-
-var width = canvas.width = window.innerWidth;
-var height = canvas.height = window.innerHeight;
-
-
-// bouncing balls ---
+// base shape
 
 function Shape(x, y, velX, velY) {
     this.x = x;
@@ -39,6 +26,8 @@ function Shape(x, y, velX, velY) {
     this.velX = velX;
     this.velY = velY;
 }
+
+// screen ball
 
 function Ball(x, y, velX, velY, color, size) {
     Shape.call(this, x, y, velX, velY);
@@ -84,7 +73,8 @@ Ball.prototype.update = function() {
     this.y += this.velY;
 }
 
-// evil circle ---
+// evil circle
+
 function EvilCircle(x, y) {
     Shape.call(this, x, y, 20, 20);
     this.color = 'white';
@@ -148,8 +138,24 @@ EvilCircle.prototype.collisionDetect = function() {
 }
 
 
+// setup
 
-// animating the balls
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+
+var width = canvas.width = window.innerWidth;
+var height = canvas.height = window.innerHeight;
+
+
+// score
+
+var para = document.querySelector('p');
+function updateCount() {
+    para.textContent = 'Ball count: ' + balls.length;
+}
+
+
+// animate the balls
 
 var initialized;
 var balls = []
