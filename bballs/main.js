@@ -150,7 +150,7 @@ var balls = []
 var evilCircle;
 
 function loop() {
-    ctx.fillStyle = 'rgba(0,0,0,1)';
+    ctx.fillStyle = 'rgba(0,0,0,0.25)';
     ctx.fillRect(0,0,width,height);
 
     if (!evilCircle) {
@@ -158,13 +158,13 @@ function loop() {
         evilCircle.setControls();
     }
 
-    while (balls.length < 50) {
-        var size = random(10, 20);
+    while (balls.length < 25) {
+        var size = random(13, 23);
         var ball = new Ball(
             random(size, width - size),
             random(size, height - size),
-            random(-7, 7),
-            random(-7, 7),
+            random(-12, 12),
+            random(-12, 12),
             true,
             'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) + ')',
             size
