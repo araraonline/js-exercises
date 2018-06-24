@@ -157,7 +157,6 @@ function updateCount() {
 
 // animate the balls
 
-var initialized;
 var balls = []
 var evilCircle;
 
@@ -178,8 +177,6 @@ function initialize() {
         balls.push(ball);
         updateCount();
     }
-
-    initialized = true;
 }
 
 function loop() {
