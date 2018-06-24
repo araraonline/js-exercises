@@ -154,7 +154,7 @@ function loop() {
     ctx.fillRect(0,0,width,height);
 
     if (!evilCircle) {
-        evilCircle = new EvilCircle(10, 10, true);
+        evilCircle = new EvilCircle(width / 2, height / 2, true);
         evilCircle.setControls();
     }
 
